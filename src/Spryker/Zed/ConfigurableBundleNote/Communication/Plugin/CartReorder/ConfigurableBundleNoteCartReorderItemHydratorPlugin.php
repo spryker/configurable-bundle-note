@@ -5,32 +5,20 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ConfigurableBundleNote\Business;
+namespace Spryker\Zed\ConfigurableBundleNote\Communication\Plugin\CartReorder;
 
 use Generated\Shared\Transfer\CartReorderTransfer;
-use Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer;
-use Generated\Shared\Transfer\QuoteResponseTransfer;
+use Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderItemHydratorPluginInterface;
+use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
-interface ConfigurableBundleNoteFacadeInterface
+/**
+ * @method \Spryker\Zed\ConfigurableBundleNote\ConfigurableBundleNoteConfig getConfig()
+ * @method \Spryker\Zed\ConfigurableBundleNote\Business\ConfigurableBundleNoteFacadeInterface getFacade()
+ */
+class ConfigurableBundleNoteCartReorderItemHydratorPlugin extends AbstractPlugin implements CartReorderItemHydratorPluginInterface
 {
     /**
-     * Specification:
-     * - Retrieves Quote from database by idQuote.
-     * - Updates configured bundle with note.
-     * - Returns `isSuccess=true` if note was successfully set and quote was updated or `isSuccess=false` otherwise.
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
-    public function setConfiguredBundleNote(
-        ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-    ): QuoteResponseTransfer;
-
-    /**
-     * Specification:
+     * {@inheritDoc}
      * - Requires `CartReorderTransfer.orderItems.idSalesOrderItem` to be set.
      * - Requires `CartReorderTransfer.orderItems.sku` to be set.
      * - Requires `CartReorderTransfer.orderItems.quantity` to be set.
@@ -46,7 +34,8 @@ interface ConfigurableBundleNoteFacadeInterface
      *
      * @return \Generated\Shared\Transfer\CartReorderTransfer
      */
-    public function hydrateCartReorderItemsWithConfigurableBundle(
-        CartReorderTransfer $cartReorderTransfer
-    ): CartReorderTransfer;
+    public function hydrate(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
+    {
+        return $this->getFacade()->hydrateCartReorderItemsWithConfigurableBundle($cartReorderTransfer);
+    }
 }
