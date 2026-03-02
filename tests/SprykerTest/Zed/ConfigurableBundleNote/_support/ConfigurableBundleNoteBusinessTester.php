@@ -50,9 +50,6 @@ class ConfigurableBundleNoteBusinessTester extends Actor
      */
     public const FAKE_CONFIGURABLE_BUNDLE_GROUP_KEY = 'configurable-bundle-group-key';
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(): QuoteTransfer
     {
         return $this->havePersistentQuote([
@@ -67,9 +64,6 @@ class ConfigurableBundleNoteBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransferWithConfiguredBundle(): QuoteTransfer
     {
         return $this->havePersistentQuote([
@@ -91,22 +85,12 @@ class ConfigurableBundleNoteBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param string|null $customerReference
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     protected function buildCustomerTransfer(?string $customerReference = null): CustomerTransfer
     {
         return (new CustomerBuilder())->build()
             ->setCustomerReference($customerReference);
     }
 
-    /**
-     * @param string|null $groupKey
-     *
-     * @return \Generated\Shared\Transfer\ConfiguredBundleTransfer
-     */
     protected function buildConfiguredBundleTransfer(?string $groupKey = null): ConfiguredBundleTransfer
     {
         return (new ConfiguredBundleBuilder())->build()

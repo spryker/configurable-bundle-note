@@ -20,17 +20,11 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class ConfigurableBundleNoteFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy\QuoteStorageStrategyInterface
-     */
     public function getQuoteStorageStrategy(): QuoteStorageStrategyInterface
     {
         return $this->createQuoteStorageStrategyProvider()->provideStorageStrategy();
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy\QuoteStorageStrategyProviderInterface
-     */
     public function createQuoteStorageStrategyProvider(): QuoteStorageStrategyProviderInterface
     {
         return new QuoteStorageStrategyProvider(
@@ -50,41 +44,26 @@ class ConfigurableBundleNoteFactory extends AbstractFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy\QuoteStorageStrategyInterface
-     */
     public function createSessionQuoteStorageStrategy(): QuoteStorageStrategyInterface
     {
         return new SessionQuoteStorageStrategy();
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy\QuoteStorageStrategyInterface
-     */
     public function createDatabaseQuoteStorageStrategy(): QuoteStorageStrategyInterface
     {
         return new DatabaseQuoteStorageStrategy($this->createConfigurableBundleNoteZedStub());
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\Zed\ConfigurableBundleNoteZedStubInterface
-     */
     public function createConfigurableBundleNoteZedStub(): ConfigurableBundleNoteZedStubInterface
     {
         return new ConfigurableBundleNoteZedStub($this->getZedRequestClient());
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\Dependency\Client\ConfigurableBundleNoteToZedRequestClientInterface
-     */
     public function getZedRequestClient(): ConfigurableBundleNoteToZedRequestClientInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleNoteDependencyProvider::CLIENT_ZED_REQUEST);
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\Dependency\Client\ConfigurableBundleNoteToQuoteClientInterface
-     */
     public function getQuoteClient(): ConfigurableBundleNoteToQuoteClientInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleNoteDependencyProvider::CLIENT_QUOTE);

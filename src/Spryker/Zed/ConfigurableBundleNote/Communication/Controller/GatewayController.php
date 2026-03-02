@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNoteAction(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer {

@@ -18,9 +18,6 @@ class ConfigurableBundleNoteZedStub implements ConfigurableBundleNoteZedStubInte
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\ConfigurableBundleNote\Dependency\Client\ConfigurableBundleNoteToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(ConfigurableBundleNoteToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;

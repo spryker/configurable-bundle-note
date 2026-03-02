@@ -18,19 +18,11 @@ class ConfigurableBundleNoteSetter implements ConfigurableBundleNoteSetterInterf
      */
     protected $quoteFacade;
 
-    /**
-     * @param \Spryker\Zed\ConfigurableBundleNote\Dependency\Facade\ConfigurableBundleNoteToQuoteFacadeInterface $quoteFacade
-     */
     public function __construct(ConfigurableBundleNoteToQuoteFacadeInterface $quoteFacade)
     {
         $this->quoteFacade = $quoteFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNote(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer {
@@ -58,12 +50,6 @@ class ConfigurableBundleNoteSetter implements ConfigurableBundleNoteSetterInterf
         return $this->quoteFacade->updateQuote($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     * @param \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     protected function updateConfiguredBundlesWithNotes(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer,
         QuoteResponseTransfer $quoteResponseTransfer

@@ -32,9 +32,6 @@ class ConfigurableBundleNoteFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testSetNoteToConfigurableBundleReturnsSuccessfulQuoteResponseTransfer(): void
     {
         //Arrange
@@ -62,9 +59,6 @@ class ConfigurableBundleNoteFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testSetNoteToConfigurableBundleWithNotExistingConfigurableBundleGroupKey(): void
     {
         //Arrange
@@ -83,9 +77,6 @@ class ConfigurableBundleNoteFacadeTest extends Unit
         $this->assertFalse($quoteResponseTransfer->getIsSuccessful());
     }
 
-    /**
-     * @return void
-     */
     public function testSetNoteToConfigurableBundleWithoutConfigurableBundles(): void
     {
         //Arrange

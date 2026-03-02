@@ -24,11 +24,6 @@ class ConfigurableBundleNoteDependencyProvider extends AbstractDependencyProvide
      */
     public const CLIENT_QUOTE = 'CLIENT_QUOTE';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -38,11 +33,6 @@ class ConfigurableBundleNoteDependencyProvider extends AbstractDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addZedRequestClient(Container $container): Container
     {
         $container->set(static::CLIENT_ZED_REQUEST, function (Container $container) {
@@ -52,11 +42,6 @@ class ConfigurableBundleNoteDependencyProvider extends AbstractDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addQuoteClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE, function (Container $container) {

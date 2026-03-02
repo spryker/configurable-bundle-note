@@ -9,8 +9,5 @@ namespace Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy;
 
 interface QuoteStorageStrategyProviderInterface
 {
-    /**
-     * @return \Spryker\Client\ConfigurableBundleNote\QuoteStorageStrategy\QuoteStorageStrategyInterface
-     */
     public function provideStorageStrategy(): QuoteStorageStrategyInterface;
 }

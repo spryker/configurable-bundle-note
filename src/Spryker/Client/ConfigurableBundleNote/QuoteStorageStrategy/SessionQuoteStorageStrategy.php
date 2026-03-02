@@ -19,19 +19,11 @@ class SessionQuoteStorageStrategy implements QuoteStorageStrategyInterface
      */
     protected const STORAGE_STRATEGY = 'session';
 
-    /**
-     * @return string
-     */
     public function getStorageStrategy(): string
     {
         return static::STORAGE_STRATEGY;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNote(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer {

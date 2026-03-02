@@ -14,11 +14,6 @@ use Generated\Shared\Transfer\ItemTransfer;
 
 class CartReorderItemHydrator implements CartReorderItemHydratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrate(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         $itemsWithConfigurableBundleNote = $this->extractItemsWithConfiguredBundleNote(
@@ -75,13 +70,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         return $indexedItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $index
-     *
-     * @return void
-     */
     protected function addReorderItem(
         CartReorderTransfer $cartReorderTransfer,
         ItemTransfer $itemTransfer,
@@ -96,12 +84,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         $cartReorderTransfer->getReorderItems()->offsetSet($index, $reorderItemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $reorderItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function addConfiguredBundleNote(ItemTransfer $itemTransfer, ItemTransfer $reorderItemTransfer): ItemTransfer
     {
         $configuredBundleTransfer = $reorderItemTransfer->getConfiguredBundle() ?? new ConfiguredBundleTransfer();

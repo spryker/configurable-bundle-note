@@ -34,9 +34,6 @@ class ConfigurableBundleNoteSalesOrderItemCollectorPluginTest extends Unit
      */
     protected ConfigurableBundleNoteCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testAddsItemWithUpdatedCartNoteToItemsToUpdateAndRemovesFromItemsToSkip(): void
     {
         // Arrange
@@ -68,9 +65,6 @@ class ConfigurableBundleNoteSalesOrderItemCollectorPluginTest extends Unit
         $this->assertCount(1, $updatedSalesOrderAmendmentItemCollectionTransfer->getItemsToUpdate());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotAddItemWithSameCartNoteToItemsToUpdateAndDoesNotRemoveFromItemsToSkip(): void
     {
         // Arrange

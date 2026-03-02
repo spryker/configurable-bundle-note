@@ -22,33 +22,21 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class ConfigurableBundleNoteBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleNote\Business\Setter\ConfigurableBundleNoteSetterInterface
-     */
     public function createConfigurableBundleNoteSetter(): ConfigurableBundleNoteSetterInterface
     {
         return new ConfigurableBundleNoteSetter($this->getQuoteFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleNote\Business\Hydrator\CartReorderItemHydratorInterface
-     */
     public function createCartReorderItemHydrator(): CartReorderItemHydratorInterface
     {
         return new CartReorderItemHydrator();
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleNote\Business\Collector\ConfigurableBundleNoteSalesOrderItemCollectorInterface
-     */
     public function createConfigurableBundleNoteSalesOrderItemCollector(): ConfigurableBundleNoteSalesOrderItemCollectorInterface
     {
         return new ConfigurableBundleNoteSalesOrderItemCollector();
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleNote\Dependency\Facade\ConfigurableBundleNoteToQuoteFacadeInterface
-     */
     public function getQuoteFacade(): ConfigurableBundleNoteToQuoteFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleNoteDependencyProvider::FACADE_QUOTE);

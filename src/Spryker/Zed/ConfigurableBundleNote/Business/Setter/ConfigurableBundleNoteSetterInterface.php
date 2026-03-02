@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\QuoteResponseTransfer;
 
 interface ConfigurableBundleNoteSetterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNote(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer;

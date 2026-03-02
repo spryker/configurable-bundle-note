@@ -12,16 +12,8 @@ use Generated\Shared\Transfer\QuoteResponseTransfer;
 
 interface QuoteStorageStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getStorageStrategy(): string;
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNote(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer;

@@ -21,11 +21,6 @@ class ConfigurableBundleNoteDependencyProvider extends AbstractBundleDependencyP
      */
     public const FACADE_QUOTE = 'FACADE_QUOTE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -34,11 +29,6 @@ class ConfigurableBundleNoteDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addQuoteFacade(Container $container): Container
     {
         $container->set(static::FACADE_QUOTE, function (Container $container) {

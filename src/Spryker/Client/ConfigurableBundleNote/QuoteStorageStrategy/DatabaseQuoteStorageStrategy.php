@@ -25,27 +25,16 @@ class DatabaseQuoteStorageStrategy implements QuoteStorageStrategyInterface
      */
     protected $configurableBundleNoteZedStub;
 
-    /**
-     * @param \Spryker\Client\ConfigurableBundleNote\Zed\ConfigurableBundleNoteZedStubInterface $configurableBundleNoteZedStub
-     */
     public function __construct(ConfigurableBundleNoteZedStubInterface $configurableBundleNoteZedStub)
     {
         $this->configurableBundleNoteZedStub = $configurableBundleNoteZedStub;
     }
 
-    /**
-     * @return string
-     */
     public function getStorageStrategy(): string
     {
         return static::STORAGE_STRATEGY;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function setConfiguredBundleNote(
         ConfiguredBundleNoteRequestTransfer $configuredBundleNoteRequestTransfer
     ): QuoteResponseTransfer {
